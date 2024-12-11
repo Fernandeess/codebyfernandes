@@ -1,0 +1,12 @@
+<div class="default_container">
+  <section>
+    @for (project of projetos; track $index) {
+      <app-project
+      [name]="project.name"
+      [image]="project.image"
+      [description]="project.description"
+      [tecnologias]="project.tecnologias"
+      ></app-project>
+    }
+  </section>
+</div>

@@ -1,0 +1,12 @@
+<div class="project-content">
+  <img [src]="image" [alt]="name" />
+  <div class="project-context">
+    <span><h1 class="title">{{ name }}</h1> <p-button label="Repositorio" icon="pi pi-github" />  </span>
+    <p class="description">{{ description }}</p>
+    <ul class="list-tech">
+      <li *ngFor="let tech of tecnologias" class="tech-item">
+        <p-tag class="tag">{{ tech }}</p-tag>
+      </li>
+    </ul>
+  </div>
+</div>
