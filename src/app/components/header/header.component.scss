@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Goldman:wght@400;700&display=swap');
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  width: 91%;
+  max-width: 90vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Bruno Ace", sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vw;
+  gap: 50px;
+}
+
+.nav_bar_links {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  li {
+    list-style: none;
+    font-family: "Goldman", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+}
+
+.nav_info {
+  padding: 0px;
+  display: flex;
+  gap: 20px;
+  li {
+    list-style: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      color: #007bff;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+    .nav_bar_links{
+      margin: 10px 0px 10px 0px;
+    }
+    .nav_info{
+      margin: 0px 0px 10px 0px;
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
