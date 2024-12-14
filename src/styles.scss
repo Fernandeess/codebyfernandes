@@ -1,15 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+@import "variables.scss";
+
+
 body{
+  background-color: $primary-color;
+  color: $white;
+  color: $text-primary;
+  width: 100%;
   margin: 0px;
   padding: 0px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .default_container
 {
-  width: 90vw;
+  width: 70vw;
   section{
 
     display: flex;
@@ -19,3 +26,24 @@ body{
     flex-direction: column;
   }
 }
+
+button {
+  background-color: $primary-color;
+  color: $white;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.alert {
+  &--success {
+    color: $success-color;
+  }
+  &--error {
+    color: $error-color;
+  }
+}
+
+
+

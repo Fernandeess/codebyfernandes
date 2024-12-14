@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+.list-projects{
+  margin: 40px 0px;
+  padding:0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  gap: 20px;
+  li{
+  }
+}
