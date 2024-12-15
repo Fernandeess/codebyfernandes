@@ -11,9 +11,9 @@
   .name {
     width: 700px;
     img {
-      width: 100%; // Usa largura total do contêiner por padrão
-      max-width: 700px; // Limita a largura máxima da imagem
-      height: auto; // Mantém a proporção da imagem
+      width: 100%;
+      max-width: 700px;
+      height: auto;
     }
   }
 
@@ -83,7 +83,7 @@
 
   .name {
     img {
-      width: 90%; // Ajuste menor para telas médias
+      width: 90%;
     }
   }
 }
@@ -91,7 +91,7 @@
 @media (max-width: 480px) {
   .name {
     img {
-      width: 100%; // Usa toda a largura do contêiner em telas pequenas
+      width: 100%;
     }
   }
 }

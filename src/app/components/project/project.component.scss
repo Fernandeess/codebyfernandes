@@ -4,32 +4,48 @@
   display: flex;
   justify-content: start;
   align-items: start;
-  width: 100%;
+
   max-width: 1000px;
   height: fit-content;
   min-height: 200px;
 
   img {
     margin-right: 10px;
-    max-width: 100%;
-
+    max-width: 320px;
+    height: 200px;
     max-height: 250px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .project-context {
     display: flex;
+    justify-content: start;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    max-width: 670px;
     min-height: 200px;
+    margin-left: 10px;
+
 
     .btnGroup {
       display: flex;
       list-style: none;
-      margin: 5px;
+      margin: 15px 0px;
       padding: 0px;
       gap: 5px;
+      .btn{
+        background-color: $secondary-color;
+      }
+      li{
+        span{
+          margin-left: 5px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+        }
+      }
+
     }
+
 
     .header {
       display: flex;
@@ -62,6 +78,7 @@
       li {
         font-size: 0.875rem;
       }
+
     }
   }
 }
@@ -91,23 +108,22 @@
   }}
 
 
-/* Ajustes para dispositivos muito pequenos (ex.: smartphones) */
 @media (max-width: 480px) {
   .project-content {
-    margin: 10px; /* Reduz a margem para dispositivos muito pequenos */
+    margin: 10px;
   }
 
   .project-context {
     .title {
-      font-size: 1rem; /* Reduz ainda mais o tamanho do título */
+      font-size: 1rem;
     }
 
     .description {
-      font-size: 0.875rem; /* Ajusta o tamanho da descrição */
+      font-size: 0.875rem;
     }
 
     .list-tech li {
-      font-size: 0.75rem; /* Reduz o tamanho da fonte na lista */
+      font-size: 0.75rem;
     }
   }
 }

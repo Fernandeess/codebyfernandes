@@ -1,15 +1,23 @@
 <section class="default_container">
   <div class="hero">
-    <span >
-      <p class="greetings-message">&lt;Matheus Fernandes/&gt; </p>
-      <p class="greetings-message-outlier">FullStack Developer</p>
+    <span class="name">
+      <img src="../../../assets/hero-name.svg" alt="">
+    </span>
+    <span class="profile">
+      <img src="../../../assets/profile.jpeg" alt="" />
     </span>
   </div>
-  <div>
-    <h1>Projetos</h1>
-    <ul>
-      <app-project></app-project>
-    </ul>
+  <div class="techImages">
+
+    <div class="content">
+      <h1>Tecnologias</h1>
+      <ul class="images">
+        @for (icon of techImages; track $index) {
+          <li>
+          <app-tech-icons [iconPath]="icon.url" [alt]="icon.alt"/>
+          </li>
+        }
+      </ul>
+    </div>
   </div>
 </section>
-

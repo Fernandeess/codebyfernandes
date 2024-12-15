@@ -1,11 +1,66 @@
 <div class="project-content">
   <img [src]="image" [alt]="name" />
   <div class="project-context">
-    <span><h1 class="title">{{ name }}</h1> <p-button label="Repositorio" icon="pi pi-github" />  </span>
+    <span class="header"
+      ><h1 class="title">{{ name }}</h1>
+    </span>
     <p class="description">{{ description }}</p>
     <ul class="list-tech">
       <li *ngFor="let tech of tecnologias" class="tech-item">
-        <p-tag class="tag">{{ tech }}</p-tag>
+        <p-tag [style]="{ backgroundColor: '#007bff' }">{{ tech }}</p-tag>
+      </li>
+    </ul>
+    <ul class="btnGroup">
+
+      @if(repository != ""){
+        <li>
+          <a (click)="openRepository(repository)">
+            <p-button  [style]="{backgroundColor: '#007bff',
+            border:'none'}"  [rounded]="true" size="small">
+              <i class="pi pi-github"></i> <span>Repository</span>
+            </p-button>
+          </a>
+
+        </li>
+
+      }@else {
+        <li>
+          <a (click)="openRepository(repository)">
+            <p-button [disabled]="true"  [style]="{backgroundColor: '#007bff',
+            border:'none'}"  [rounded]="true" size="small">
+              <i class="pi pi-github"></i> <span>Repository</span>
+            </p-button>
+          </a>
+
+        </li>
+      }
+      <li>
+        @if (deploy != "") {
+          <p-button
+
+          [rounded]="true"
+          severity="contrast"
+          size="small"
+          [style]="{backgroundColor: '#007bff',
+            border:'none'
+          }"
+
+        >
+        <i class="pi pi-external-link"></i> <span>Deploy</span>
+      </p-button>
+        }@else {
+          <p-button
+          [disabled]="true"
+          [rounded]="true"
+          severity="contrast"
+          size="small"
+          [style]="{backgroundColor: '#007bff',
+            border:'none'
+          }"
+
+        > <i class="pi pi-external-link"></i> <span>Deploy</span>
+      </p-button>
+        }
       </li>
     </ul>
   </div>

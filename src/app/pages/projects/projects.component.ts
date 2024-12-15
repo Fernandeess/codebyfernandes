@@ -13,27 +13,30 @@ export class ProjectsComponent {
    projetos: Project[] = [
     {
       id: 1,
-      name: "Portfolio Website",
-      image: "https://picsum.photos/320/200",
-      repository: "https://github.com/seu-usuario/portfolio-website",
-      description: "Um website portfolio desenvolvido com tecnologias modernas para exibir projetos e habilidades.",
-      tecnologias: ["HTML", "CSS", "JavaScript", "React"]
+      name: "Foodway",
+      image: "../../../assets/projects/foodway.png",
+      repository: "https://github.com/orgs/Food-Way/repositories",
+      description: "Desenvolvimento de plataforma com Java e React que reúne avaliações de clientes e funcionários de restaurantes, oferecendo informações completas aos usuários.",
+      tecnologias: ["React","Java", "Spring", "RDS Postgres","AWS","S3","EC2","VPC","NGINX","Grafana","Prometheus" ],
+      deploy:""
     },
     {
       id: 2,
-      name: "E-commerce App",
-      image: "https://picsum.photos/320/200",
-      repository: "https://github.com/seu-usuario/ecommerce-app",
-      description: "Uma aplicação de e-commerce com funcionalidades completas, incluindo carrinho de compras e integração de pagamentos.",
-      tecnologias: ["Angular", "TypeScript", "Node.js", "MongoDB"]
+      name: "ErrorEagle",
+      image: "../../../assets/projects/erroreagle.png",
+      repository: "https://github.com/orgs/ErrorEagle/repositories",
+      description: "Plataforma avançada de monitoramento com dashboards interativos para terminais de autoatendimento em mercados.",
+      tecnologias: ["Java","Node", "Express", "Docker", "AWS" ,"MySQL"],
+      deploy:""
     },
     {
       id: 3,
-      name: "Blog API",
-      image: "https://picsum.photos/320/200",
-      repository: "https://github.com/seu-usuario/blog-api",
-      description: "Uma API RESTful para gerenciamento de blogs com autenticação e gerenciamento de usuários.",
-      tecnologias: ["Node.js", "Express", "MongoDB"]
+      name: "Datafound",
+      image: "../../../assets/projects/datafound.png",
+      repository: "https://github.com/orgs/Data-Found/repositories",
+      description: "Projeto de Otimização Logística para Corredores de Lojas de Departamentos com IoT: Implementação de Arduino com Sensores de Movimento para captura de dados",
+      tecnologias: ["Node.js", "Express", "MongoDB"],
+      deploy:""
     }
   ];
 }

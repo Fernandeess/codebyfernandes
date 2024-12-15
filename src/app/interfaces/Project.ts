@@ -4,6 +4,7 @@ export interface Project {
   name: string;
   image: string;
   repository: string;
+  deploy: string ;
   description: string;
   tecnologias: string[];
 
