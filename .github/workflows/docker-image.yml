@@ -25,4 +25,4 @@ jobs:
           context: .  # O contexto padrão já é o diretório raiz
           file: ./Dockerfile  # Caminho do Dockerfile no root do projeto
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
