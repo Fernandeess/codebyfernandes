@@ -1,1 +1,32 @@
-<p>experiences works!</p>
+<div class="default_container">
+  <p-timeline
+  [value]="events"
+  [align]="'alternate'"
+  [style]="{ color: '#ffffff' }"
+>
+  <ng-template pTemplate="content" let-event>
+    <p-card
+      [header]="event.cargo"
+      [style]="{
+        backgroundColor: '#040916',
+        color: 'white',
+        padding: '0px 0px'
+      }"
+      ><span class="card-xp">
+        <h5>{{ event.empresa }}</h5>
+        <p><strong>Contrato:</strong> {{ event.contrato }}</p>
+        <p><strong>Período:</strong> {{ event.periodo }}</p>
+        <p><strong>Descrição</strong></p>
+        <ul>
+          @for (item of event.descricao; track $index) {
+            <li>
+              <p>{{ item }}</p>
+            </li>
+          }
+        </ul>
+      </span>
+    </p-card>
+  </ng-template>
+</p-timeline>
+
+</div>
