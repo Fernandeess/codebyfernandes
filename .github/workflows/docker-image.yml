@@ -26,3 +26,4 @@ jobs:
           file: ./Dockerfile  # Caminho do Dockerfile no root do projeto
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
+
