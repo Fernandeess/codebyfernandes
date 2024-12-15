@@ -7,6 +7,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RippleModule } from 'primeng/ripple';
 import { Router } from '@angular/router';
+import { NavigationUtilsService } from '../../utils/NavigationUtilsService';
+
 
 
 @Component({
@@ -19,7 +21,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent  {
   items: MenuItem[] | undefined;
 
-  constructor(private router: Router) {}
+  constructor(public navigationUtils: NavigationUtilsService) {}
 
   ngOnInit() {
       this.items = [
@@ -38,16 +40,6 @@ export class HeaderComponent  {
       ];
   }
 
-  goToPath(path : String) {
-    console.log(path)
-    this.router.navigate([`/${path}`]);
-  }
 
-  goToExternalPage(url: string) {
-    const newTab = window.open(url, '_blank');
-    if (newTab) {
-      newTab.opener = null;
-    }
-  }
 
 }
