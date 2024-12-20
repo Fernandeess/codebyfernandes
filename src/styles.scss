@@ -2,6 +2,7 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "variables.scss";
+@import 'animate.css';
 
 
 body{
@@ -30,7 +31,11 @@ body{
 button {
   background-color: $primary-color;
   color: $white;
-
+  -webkit-transition: all 0.5s linear;
+-moz-transition: all 0.5s linear;
+-ms-transition: all 0.5s linear;
+-o-transition: all 0.5s linear;
+transition: all 0.5s linear;
   &:hover {
     background-color: darken($primary-color, 10%);
   }
