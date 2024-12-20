@@ -28,7 +28,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   webapp:
-    image: fernandeeess/portfolio-app:latest
+    image: fernandeeess/portfolio-app:prod
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.webapp.rule=Host(`codebyfernandes.tech`)"
