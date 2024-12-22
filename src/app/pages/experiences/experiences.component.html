@@ -14,7 +14,9 @@
       }"
       ><span class="card-xp">
         <h5>{{ event.empresa }}</h5>
-        <p><strong>Contrato:</strong> {{ event.contrato }}</p>
+        @if(event.contrato != null || event.contrato == "" ){
+          <p><strong>Contrato:</strong> {{ event.contrato }}</p>
+        }
         <p><strong>Período:</strong> {{ event.periodo }}</p>
         <p><strong>Descrição</strong></p>
         <ul>
