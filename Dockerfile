@@ -1,31 +1,31 @@
 # Stage 1: Build the Angular app
 FROM node:22 AS build
 
-# Define the working directory in the container
+# Define o diretório de trabalho no container
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copia os arquivos de configuração do Node e instala as dependências
 COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the files and build the Angular app
+# Copia os arquivos restantes e constrói o app Angular
 COPY . .
-RUN npm run build --watch
+RUN npm run build
 
-# Stage 2: Serve the Angular app
-FROM node:22
+# Stage 2: Serve the Angular app usando Nginx
+FROM nginx:alpine
 
-# Define the working directory for the final image
-WORKDIR /app
+# Define o diretório de trabalho para Nginx
+WORKDIR /usr/share/nginx/html
 
-# Copy the built files from the previous stage
-COPY --from=build /app/dist/codebyfernandes/browser /app/dist
+# Copia os arquivos gerados no estágio anterior para o Nginx
+COPY --from=build /app/dist/codebyfernandes/browser .
 
-# Install a lightweight HTTP server
-RUN npm install -g http-server
+# Copia uma configuração personalizada do Nginx
+COPY default.conf /etc/nginx/conf.d/default.conf
 
-# Expose the port Traefik will use to access the app
+# Exposição da porta 80 para o servidor
 EXPOSE 80
 
-# Start the HTTP server to serve the Angular files
-CMD ["http-server", "dist", "-p", "80"]
+# Comando padrão para iniciar o Nginx
+CMD ["nginx", "-g", "daemon off;"]
