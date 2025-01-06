@@ -19,7 +19,7 @@ export class ExperiencesComponent {
         {
           empresa: 'Stefanini Consultoria e Assessoria em Informática S.A.',
           cargo: 'Analista Desenvolvedor Fullstack',
-          periodo: 'Novembro/2023 - Atual',
+          periodo: 'Novembro/2023 - Dezembro/2024',
           descricao: ["Desenvolvimento de API REST utilizando .NET para integração com sistemas de monitoramento e gestão operacional.","Desenvolvimento de uma plataforma web interativa e responsiva com Angular desenvolvendo componentes reutilizáveis e garantindo uma experiência de usuário otimizada para análise de dados em tempo real.","Desenvolvimento de fluxos de dados com Azure Data Factory e FABRIC K2VIEW."]
         },
         {
