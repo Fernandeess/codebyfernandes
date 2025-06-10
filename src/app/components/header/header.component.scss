@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Goldman:wght@400;700&display=swap');
+
 @import "../../../variables.scss";
 
 .header {
@@ -24,6 +24,15 @@ h1 {
   font-size: 1.5rem;
   color: $white;
   text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  &:hover {
+    color: $secondary-color;
+  }
 }
 
 .nav {
@@ -48,15 +57,18 @@ h1 {
     cursor: pointer;
     transition: color 0.3s ease;
 
-  a{
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: $secondary-color;
+    a {
+      color: $white;
+      text-decoration: none;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      &:hover {
+        color: $secondary-color;
+      }
     }
-  }
-
-
   }
 }
 
@@ -71,8 +83,13 @@ h1 {
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 
-    a{
+    a {
       color: $white;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      transition: all 0.5s linear;
       &:hover {
         transform: scale(1.1);
         color: #007bff;
@@ -80,7 +97,6 @@ h1 {
     }
   }
 }
-
 
 @media (max-width: 768px) {
   .container {
@@ -91,10 +107,10 @@ h1 {
   .nav {
     flex-direction: column;
     gap: 15px;
-    .nav_bar_links{
+    .nav_bar_links {
       margin: 10px 0px 10px 0px;
     }
-    .nav_info{
+    .nav_info {
       margin: 0px 0px 10px 0px;
     }
   }

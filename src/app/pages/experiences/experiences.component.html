@@ -1,32 +1,33 @@
-<div class="default_container">
-  <p-timeline
-  [value]="events"
-  [align]="'alternate'"
-  [style]="{ color: '#ffffff' }"
->
-  <ng-template pTemplate="content" let-event>
-    <p-card
-      [header]="event.cargo"
-      [style]="{
-        backgroundColor: '#040916',
-        color: 'white',
-        padding: '0px 0px'
-      }"
-      ><span class="card-xp">
-        <h5>{{ event.empresa }}</h5>
-        <p><strong>Contrato:</strong> {{ event.contrato }}</p>
-        <p><strong>Período:</strong> {{ event.periodo }}</p>
-        <p><strong>Descrição</strong></p>
-        <ul>
-          @for (item of event.descricao; track $index) {
-            <li>
-              <p>{{ item }}</p>
-            </li>
-          }
-        </ul>
-      </span>
-    </p-card>
-  </ng-template>
-</p-timeline>
+<div id="experiences" class="default_container">
+  <div class="header-container">
+    <img
+      src="../../../assets/img/briefcase.svg"
+      alt="Tecnologias"
+      class="header-image"
+    />
+    <h1>Experiências</h1>
+  </div>
+  <div *ngFor="let event of events" class="experience-card">
+    <div class="experience-header">
+      <img
+        [src]="event.logo"
+        alt="{{ event.empresa }} logo"
+        class="company-logo"
+      />
+      <div class="experience-title">
+        <h5>{{ event.cargo }}</h5>
+        <p class="empresa">{{ event.empresa }}</p>
+      </div>
+    </div>
 
+    <div class="experience-details">
+      <p class="periodo"><strong>Período:</strong> {{ event.periodo }}</p>
+      <p class="descricao-title"><strong>Descrição</strong></p>
+      <ul class="descricao-list">
+        <li *ngFor="let item of event.descricao">
+          <p>{{ item }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

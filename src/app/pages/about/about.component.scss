@@ -1,17 +1,43 @@
 @import "../../../variables.scss";
 
-.container-about{
+.container-about {
   display: flex;
   justify-content: center;
-
-  width: 70vw;
-  .about{
-  display: flex;
-  justify-content: start;
   align-items: center;
-  flex-direction: column;
-  width: 70%;
-  height: 85vh;
-  align-items: start;
-  color: white;
-}}
+  width: 70vw;
+  margin: 0 auto;
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    color: white;
+    padding: 20px;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .text {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .image {
+      flex-shrink: 0;
+      width: 150px;
+      height: auto;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}

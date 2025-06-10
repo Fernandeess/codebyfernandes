@@ -1,21 +1,36 @@
-<section class="default_container">
+<section
+  id="home"
+  class="default_container animate__animated animate_slower animate__fadeInDown"
+>
   <div class="hero">
     <span class="name">
-      <img src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1734265553/hero-name_csohh6.svg" alt="">
+      <img
+        src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1734265553/hero-name_csohh6.svg"
+        alt=""
+      />
     </span>
     <span class="profile">
-      <img src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1734265553/profile_spj4l6.jpg" alt="" />
+      <img
+        src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1734265553/profile_spj4l6.jpg"
+        alt=""
+      />
     </span>
   </div>
   <div class="techImages">
-
     <div class="content">
-      <h1>Tecnologias</h1>
+      <div class="header-container">
+        <img
+          src="../../../assets/img/layers.svg"
+          alt="Tecnologias"
+          class="header-image"
+        />
+        <h1>Tecnologias</h1>
+      </div>
       <ul class="images">
         @for (icon of techImages; track $index) {
-          <li>
-          <app-tech-icons [iconPath]="icon.url" [alt]="icon.alt"/>
-          </li>
+        <li>
+          <app-tech-icons [iconPath]="icon.url" [alt]="icon.alt" />
+        </li>
         }
       </ul>
     </div>

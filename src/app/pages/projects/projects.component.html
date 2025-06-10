@@ -1,18 +1,27 @@
-<div class="default_container">
-  <section >
-    <ul class="list-projects">
+<section
+  id="projects"
+  class="default_container animate__animated animate_slower animate__fadeInLeft"
+>
+  <div class="header-container">
+    <img
+      src="../../../assets/img/folder.svg"
+      alt="Tecnologias"
+      class="header-image"
+    />
+    <h1>Projetos</h1>
+  </div>
+  <ul class="list-projects">
     @for (project of projetos; track $index) {
-      <li>
-        <app-project
-      [name]="project.name"
-      [image]="project.image"
-      [description]="project.description"
-      [tecnologias]="project.tecnologias"
-      [repository]="project.repository"
-      [deploy]="project.deploy"
+    <li>
+      <app-project
+        [name]="project.name"
+        [image]="project.image"
+        [description]="project.description"
+        [tecnologias]="project.tecnologias"
+        [repository]="project.repository"
+        [deploy]="project.deploy"
       />
-      </li>
+    </li>
     }
   </ul>
-  </section>
-</div>
+</section>
