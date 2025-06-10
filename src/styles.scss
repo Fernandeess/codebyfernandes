@@ -5,8 +5,8 @@
 @import 'animate.css';
 
 
-body{
-   background-color: $primary-color;
+body {
+  background-color: $primary-color;
   color: $white;
   color: $text-primary;
   width: 100%;
@@ -15,10 +15,11 @@ body{
   font-family: "Montserrat", sans-serif;
 }
 
-.default_container
-{
+.default_container {
   width: 70vw;
-  section{
+  max-width: 1600px;
+
+  section {
 
     display: flex;
     align-items: center;
@@ -28,14 +29,34 @@ body{
   }
 }
 
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+}
+
+.header-image {
+  width: 40px;
+  height: auto;
+}
+
+
 button {
   background-color: $primary-color;
   color: $white;
   -webkit-transition: all 0.5s linear;
--moz-transition: all 0.5s linear;
--ms-transition: all 0.5s linear;
--o-transition: all 0.5s linear;
-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+
   &:hover {
     background-color: darken($primary-color, 10%);
   }
@@ -45,6 +66,7 @@ transition: all 0.5s linear;
   &--success {
     color: $success-color;
   }
+
   &--error {
     color: $error-color;
   }
@@ -56,10 +78,11 @@ transition: all 0.5s linear;
   border: none !important;
 }
 
-.p-card-body{
+.p-card-body {
   padding: 0px;
 
 }
-.p-card-content{
+
+.p-card-content {
   padding-top: 0px;
 }
