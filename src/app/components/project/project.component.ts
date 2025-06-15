@@ -8,9 +8,9 @@ import { ChipModule } from 'primeng/chip';
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [TagModule,CommonModule,ButtonModule,ChipModule],
+  imports: [TagModule, CommonModule, ButtonModule, ChipModule],
   templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+  styleUrl: './project.component.scss',
 })
 export class ProjectComponent {
   @Input() id!: number;
@@ -20,10 +20,12 @@ export class ProjectComponent {
   @Input() description!: string;
   @Input() deploy!: string;
   @Input() tecnologias: string[] = [];
-  openRepository(repositoryUrl : string): void {
+  openRepository(repositoryUrl: string): void {
     debugger;
-    console.log(repositoryUrl);
-
     window.open(repositoryUrl, '_blank'); // Abre o link em uma nova aba
+  }
+  openDeploy(deployUrl: string): void {
+    debugger;
+    window.open(deployUrl, '_blank'); // Abre o link em uma nova aba
   }
 }

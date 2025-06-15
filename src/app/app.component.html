@@ -1,8 +1,5 @@
-<app-header></app-header>
+<app-header [isInservice]="isInService"></app-header>
 <main>
-  <app-home></app-home>
-  <app-experiences></app-experiences>
-  <app-projects></app-projects>
-  <app-about></app-about>
+  <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>

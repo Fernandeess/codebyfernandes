@@ -1,13 +1,153 @@
-@import "../../../variables.scss";
-
-footer{
+.footer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding:  20px ;
-  height: fit-content;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  color: $white;
+  background: #000;
+  color: white;
+  padding: 60px 0 20px;
 
+  .container {
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.footer-section {
+  flex-basis: calc(25% - 2rem);
+  min-width: 200px;
+  flex-grow: 1;
+
+  img {
+    width: 150px;
+  }
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #3b82f6;
+}
+
+.footer-section p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  margin: none;
+  padding: 0px;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #3b82f6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #94a3b8;
+  margin: 0;
+}
+
+.icon-website::before {
+  content: '🌐';
+}
+
+.icon-ecommerce::before {
+  content: '🛒';
+}
+
+.icon-webapp::before {
+  content: '💻';
+}
+
+.icon-phone::before {
+  content: '📞';
+}
+
+.icon-email::before {
+  content: '✉️';
+}
+
+.icon-location::before {
+  content: '📍';
+}
+
+.icon-linkedin::before {
+  content: 'in';
+}
+
+.icon-instagram::before {
+  content: 'ig';
+}
+
+.icon-github::before {
+  content: 'gh';
+}
+
+@media (max-width: 1024px) {
+  .footer .container {
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .footer-content {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-section {
+    flex-basis: calc(50% - 1.5rem);
+    min-width: 250px;
+    text-align: center;
+  }
+
+  .footer-section:first-child {
+    flex-basis: 100%;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
 }

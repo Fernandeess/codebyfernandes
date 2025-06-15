@@ -1,36 +1,26 @@
-<header class="header animate__animated animate_slow animate__fadeInDown">
-  <span class="container">
-    <h1 class="logo" (click)="navigationUtils.goToPath('')">
-      CODE BY FERNANDES
-    </h1>
-    <span class="nav">
-      <ul class="nav_bar_links">
-        <li><a href="#home">Início</a></li>
-        <li>
-          <a href="#experiences">Experiências</a>
-        </li>
-        <li>
-          <a href="#projects">Projetos</a>
-        </li>
-        <li><a href="#about">Sobre</a></li>
-      </ul>
-      <ul class="nav_info">
-        <li>
-          <a href="https://github.com/Fernandeess"
-            ><i class="pi pi-github" style="font-size: 1.5rem"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/matheus-fernandeess/"
-            ><i class="pi pi-linkedin" style="font-size: 1.5rem"></i
-          ></a>
-        </li>
-        <li>
-          <a href=""
-            ><i class="pi pi-envelope" style="font-size: 1.5rem"></i
-          ></a>
-        </li>
-      </ul>
-    </span>
-  </span>
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo link-item" (click)="navigationUtils.goToPath('/')">
+      <img
+        src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1749956270/logo_hhkxo8.svg"
+        alt=""
+      />
+    </div>
+    <div class="nav-links">
+      @if(isInservice){ }@else if (!isInservice) {
+      <a href="#home">Início</a>
+      <a href="#experiences">Experiências</a>
+      <a href="#projects">Projetos</a>
+      <a href="#about">Sobre</a>
+      <a (click)="navigationUtils.goToPath('services')">Serviços</a>
+
+      }
+    </div>
+    <a
+      href="https://api.whatsapp.com/send/?phone=5511975359143&text&type=phone_number&app_absent=0"
+      class="cta-button"
+    >
+      Solicitar Orçamento
+    </a>
+  </nav>
 </header>

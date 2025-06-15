@@ -17,7 +17,7 @@ export class ExperiencesComponent {
   constructor() {
     this.events = [
       {
-        logo: '../../../assets/img/05256c91e21702fb3f899a69f657d969.jpeg',
+        logo: 'https://res.cloudinary.com/dqvkg85dl/image/upload/v1749955205/stefanini_cnxuo8.webp',
         empresa: 'Stefanini Consultoria e Assessoria em Informática S.A.',
         cargo: 'Analista Desenvolvedor Fullstack',
         periodo: 'Novembro/2023 - Dezembro/2024',
@@ -28,7 +28,7 @@ export class ExperiencesComponent {
         ],
       },
       {
-        logo: '../../../assets/img/05256c91e21702fb3f899a69f657d969.jpeg',
+        logo: 'https://res.cloudinary.com/dqvkg85dl/image/upload/v1749955205/stefanini_cnxuo8.webp',
         empresa: 'Stefanini Consultoria e Assessoria em Informática S.A.',
         cargo: 'Estagiário de Desenvolvimento Backend',
         periodo: 'Fevereiro/2023 - Novembro/2023',
@@ -38,7 +38,7 @@ export class ExperiencesComponent {
         ],
       },
       {
-        logo: '../../../assets/img/abraf.jpg',
+        logo: 'https://res.cloudinary.com/dqvkg85dl/image/upload/v1749955205/abraf_ygyxsm.webp',
         empresa: 'Abraf',
         cargo: 'Desenvolvedor Web',
         periodo: 'Abril/2022 - Junho/2022',

@@ -1,5 +1,5 @@
 import { MenubarModule } from 'primeng/menubar';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
@@ -9,37 +9,39 @@ import { RippleModule } from 'primeng/ripple';
 import { Router } from '@angular/router';
 import { NavigationUtilsService } from '../../utils/NavigationUtilsService';
 
-
-
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule, CommonModule],
+  imports: [
+    MenubarModule,
+    BadgeModule,
+    AvatarModule,
+    InputTextModule,
+    RippleModule,
+    CommonModule,
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent  {
+export class HeaderComponent {
   items: MenuItem[] | undefined;
+  @Input() isInservice: boolean | undefined;
 
   constructor(public navigationUtils: NavigationUtilsService) {}
-
   ngOnInit() {
-      this.items = [
-          {
-              label: 'Inicio'
-          },
-          {
-              label: 'Sobre'
-          },
-          {
-              label: 'Projetos'
-          },
-          {
-            label: 'Experiencias'
-        }
-      ];
+    this.items = [
+      {
+        label: 'Inicio',
+      },
+      {
+        label: 'Sobre',
+      },
+      {
+        label: 'Projetos',
+      },
+      {
+        label: 'Experiencias',
+      },
+    ];
   }
-
-
-
 }

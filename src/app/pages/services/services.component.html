@@ -1,0 +1,194 @@
+<div>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Transformamos suas
+          <span class="highlight">ideias digitais</span> em realidade
+        </h1>
+
+        <p class="hero-subtitle">
+          Desenvolvemos sites, e-commerces e aplicações web personalizadas para
+          impulsionar seu negócio no mundo digital
+        </p>
+
+        <div class="hero-ctas">
+          <a
+            href="https://wa.me/5511975359143?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20meu%20projeto."
+            class="cta-primary"
+            target="_blank"
+            >Solicitar Proposta</a
+          >
+
+          <a
+            href="https://wa.me/5511975359143?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20que%20voc%C3%AA%20oferece."
+            class="cta-secondary"
+            target="_blank"
+            >Fale com um Especialista</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1749955206/Frame_2_schbmr.webp"
+          alt="Imagem ilustrativa dos nossos serviços digitais"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="servicos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Serviços</h2>
+
+        <p>Soluções digitais completas para o seu negócio</p>
+      </div>
+
+      <div class="grid">
+        <div class="card" *ngFor="let service of services">
+          <div class="icon">
+            <i [class]="service.icon"></i>
+          </div>
+
+          <h3>{{ service.title }}</h3>
+
+          <p>{{ service.description }}</p>
+
+          <ul class="features">
+            <li *ngFor="let feature of service.features">{{ feature }}</li>
+          </ul>
+
+          <a
+            href="https://wa.me/5511975359143?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20um%20dos%20seus%20servi%C3%A7os%20e%20gostaria%20de%20saber%20mais."
+            class="cta"
+            target="_blank"
+            >Quero Saber Mais</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <div class="content">
+        <div class="about-text">
+          <h2>Sobre Mim</h2>
+
+          <p class="about-intro">
+            Sou desenvolvedor web com 4 anos de experiência criando soluções
+            digitais sob medida.
+          </p>
+
+          <p>
+            Busco sempre aliar conhecimento técnico, atenção aos detalhes e foco
+            nas necessidades de cada cliente, entregando projetos funcionais e
+            personalizados.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat">
+              <h3>100%</h3>
+
+              <p>Clientes Satisfeitos</p>
+            </div>
+
+            <div class="stat">
+              <h3>4</h3>
+
+              <p>Anos de Experiência</p>
+            </div>
+
+            <div class="stat">
+              <h3>10+</h3>
+
+              <p>Projetos Entregues como Frella</p>
+            </div>
+          </div>
+
+          <div class="ctas-about">
+            <a
+              href="https://wa.me/5511975359143?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20um%20poss%C3%ADvel%20projeto."
+              class="cta-primary"
+              target="_blank"
+              >Fale Comigo</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Vamos conversar?</h2>
+
+          <p>
+            Entre em contato conosco e vamos transformar sua ideia em realidade
+            digital.
+          </p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="pi pi-phone"></i>
+              <div>
+                <h4>Telefone</h4>
+
+                <p>(11) 97535-9143</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <i class="pi pi-envelope"></i>
+
+              <div>
+                <h4>E-mail</h4>
+
+                <p>matheusfernandesrodrigues&#64;outlook.com</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <i class="pi pi-map-marker"></i>
+
+              <div>
+                <h4>Localização</h4>
+
+                <p>São Paulo, SP</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/matheus-fernandeess/"
+              class="social-link"
+              blanks="_blank"
+            >
+              <i class="pi pi-linkedin"></i>
+            </a>
+
+            <!-- <a href="#" class="social-link">
+              <i class="pi pi-instagram"></i>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <a
+    href="https://wa.me/5511975359143"
+    class="whatsapp-button"
+    target="_blank"
+    aria-label="Fale conosco pelo WhatsApp"
+  >
+    <img
+      src="https://res.cloudinary.com/dqvkg85dl/image/upload/v1749955205/zap_u6ohsg.webp"
+      alt="WhatsApp"
+    />
+  </a>
+</div>

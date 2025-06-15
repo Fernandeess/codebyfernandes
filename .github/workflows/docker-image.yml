@@ -22,8 +22,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .  # O contexto padrão já é o diretório raiz
-          file: ./Dockerfile  # Caminho do Dockerfile no root do projeto
+          context: . # O contexto padrão já é o diretório raiz
+          file: ./Dockerfile # Caminho do Dockerfile no root do projeto
           push: true
           tags: fernandeeess/portfolio-app:prod
-
