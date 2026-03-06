@@ -1,6 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,7 +12,6 @@ import { ExperiencesComponent } from './pages/experiences/experiences.component'
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     HeaderComponent,
     SidebarModule,
     FooterComponent,

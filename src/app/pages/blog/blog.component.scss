@@ -1,4 +1,5 @@
-@import "src/variables.scss";
+@use "sass:color";
+@use "variables" as *;
 
 .blog-container {
   display: flex;
@@ -93,7 +94,7 @@
 .empty-state {
   text-align: center;
   padding: 80px 20px;
-  background: lighten($primary-color, 65%);
+  background: color.adjust($primary-color, $lightness: 65%);
   border-radius: 10px;
   border: 2px dashed rgba(0, 0, 0, 0.1);
 
@@ -229,7 +230,7 @@
     display: inline-block;
 
     &:hover {
-      color: darken($secondary-color, 10%);
+      color: color.adjust($secondary-color, $lightness: -10%);
       transform: translateX(4px);
     }
   }

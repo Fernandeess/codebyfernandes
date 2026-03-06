@@ -1,7 +1,8 @@
+@use "sass:color";
+@use "variables" as *;
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
-@import "variables.scss";
 @import 'animate.css';
 
 
@@ -58,7 +59,7 @@ button {
   transition: all 0.5s linear;
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: color.adjust($primary-color, $lightness: -10%);
   }
 }
 

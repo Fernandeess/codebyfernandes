@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+@use "variables" as *;
 
 .list-projects {
   margin: 0px 0px 50px 0px;
