@@ -1,0 +1,3 @@
+com\codebyfernandes\application\PostServiceImplTest.class
+com\codebyfernandes\adapters\out\persistence\UserRepositoryAdapterTest.class
+com\codebyfernandes\adapters\in\rest\JwtAuthenticationAdapterTest.class

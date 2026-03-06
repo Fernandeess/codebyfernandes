@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.codebyfernandes.adapters.in.rest.JwtAuthenticationAdapterTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.254 s -- in com.codebyfernandes.adapters.in.rest.JwtAuthenticationAdapterTest
