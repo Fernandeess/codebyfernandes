@@ -1,0 +1,134 @@
+<div class="post-form-container">
+  <div class="form-header">
+    <h2>{{ getFormTitle() }}</h2>
+    <button type="button" class="btn-close" (click)="onCancelClick()">✕</button>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Error Alert -->
+    <div *ngIf="error" class="alert alert-error">
+      <span>{{ error }}</span>
+    </div>
+
+    <!-- Title Field -->
+    <div class="form-group">
+      <label for="title">Title *</label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="form-control"
+        placeholder="Enter post title"
+        [class.is-invalid]="submitted && f['title'].errors"
+      />
+      <div *ngIf="submitted && f['title'].errors" class="error-message">
+        <span *ngIf="f['title'].errors['required']">Title is required</span>
+        <span *ngIf="f['title'].errors['minlength']">Title must be at least 3 characters</span>
+      </div>
+    </div>
+
+    <!-- Category Field -->
+    <div class="form-group">
+      <label for="category">Category *</label>
+      <select
+        id="category"
+        formControlName="category"
+        class="form-control"
+        [class.is-invalid]="submitted && f['category'].errors"
+      >
+        <option value="">Select a category</option>
+        <option *ngFor="let cat of categories" [value]="cat.value">
+          {{ cat.label }}
+        </option>
+      </select>
+      <div *ngIf="submitted && f['category'].errors" class="error-message">
+        <span *ngIf="f['category'].errors['required']">Category is required</span>
+      </div>
+    </div>
+
+    <!-- Author Field -->
+    <div class="form-group">
+      <label for="author">Author *</label>
+      <input
+        type="text"
+        id="author"
+        formControlName="author"
+        class="form-control"
+        placeholder="Your name"
+        [class.is-invalid]="submitted && f['author'].errors"
+      />
+      <div *ngIf="submitted && f['author'].errors" class="error-message">
+        <span *ngIf="f['author'].errors['required']">Author is required</span>
+        <span *ngIf="f['author'].errors['minlength']">Author must be at least 2 characters</span>
+      </div>
+    </div>
+
+    <!-- Source URL Field -->
+    <div class="form-group">
+      <label for="sourceUrl">Source URL *</label>
+      <input
+        type="url"
+        id="sourceUrl"
+        formControlName="sourceUrl"
+        class="form-control"
+        placeholder="https://medium.com/@username/article or https://youtube.com/watch?v=..."
+        [class.is-invalid]="submitted && f['sourceUrl'].errors"
+      />
+      <p class="form-hint">Link to Medium, Dev.to, YouTube or other source</p>
+      <div *ngIf="submitted && f['sourceUrl'].errors" class="error-message">
+        <span *ngIf="f['sourceUrl'].errors['required']">Source URL is required</span>
+        <span *ngIf="f['sourceUrl'].errors['pattern']">URL must start with http:// or https://</span>
+      </div>
+    </div>
+
+    <!-- Content Field -->
+    <div class="form-group">
+      <label for="content">Content / Summary *</label>
+      <textarea
+        id="content"
+        formControlName="content"
+        class="form-control textarea"
+        placeholder="Write a brief summary or description of the post"
+        rows="6"
+        [class.is-invalid]="submitted && f['content'].errors"
+      ></textarea>
+      <div *ngIf="submitted && f['content'].errors" class="error-message">
+        <span *ngIf="f['content'].errors['required']">Content is required</span>
+        <span *ngIf="f['content'].errors['minlength']">Content must be at least 10 characters</span>
+      </div>
+    </div>
+
+    <!-- Published Checkbox -->
+    <div class="form-group checkbox-group">
+      <label>
+        <input
+          type="checkbox"
+          formControlName="published"
+          class="form-checkbox"
+        />
+        <span>Publish this post</span>
+      </label>
+      <p class="form-hint">Unchecked posts will be saved as drafts</p>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="onCancelClick()"
+        [disabled]="loading"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loading"
+      >
+        <span *ngIf="!loading">{{ getSubmitButtonText() }}</span>
+        <span *ngIf="loading">Saving...</span>
+      </button>
+    </div>
+  </form>
+</div>

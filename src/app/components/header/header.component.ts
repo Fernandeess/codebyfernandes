@@ -32,6 +32,9 @@ export class HeaderComponent  {
               label: 'Sobre'
           },
           {
+              label: 'Blog'
+          },
+          {
               label: 'Projetos'
           },
           {

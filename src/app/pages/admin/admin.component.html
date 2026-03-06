@@ -1,0 +1,99 @@
+<section class="admin-container">
+  <!-- Admin Header -->
+  <div class="admin-header">
+    <div class="header-content">
+      <div class="header-info">
+        <h1>Admin Dashboard</h1>
+        <p>Manage your blog posts</p>
+      </div>
+      <div class="header-actions">
+        <span class="current-user">Welcome, <strong>{{ currentUser }}</strong></span>
+        <button class="btn btn-primary btn-lg" (click)="onNewPost()">
+          + New Post
+        </button>
+        <button class="btn btn-secondary" (click)="onLogout()">
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Form Modal -->
+  <div *ngIf="showForm" class="form-overlay">
+    <div class="form-modal">
+      <app-post-form
+        [selectedPost]="selectedPost"
+        (onCancel)="onFormCancel()"
+        (onSuccess)="onFormSuccess()"
+      ></app-post-form>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="admin-content">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-state">
+      <p>Loading posts...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!loading && posts.length === 0" class="empty-state">
+      <div class="empty-icon">📝</div>
+      <h2>No posts yet</h2>
+      <p>Start creating your first blog post</p>
+      <button class="btn btn-primary" (click)="onNewPost()">Create First Post</button>
+    </div>
+
+    <!-- Posts List -->
+    <div *ngIf="!loading && posts.length > 0" class="posts-list">
+      <table class="posts-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts" class="post-row">
+            <td class="title-cell">
+              <strong>{{ post.title }}</strong>
+              <p class="subtitle">{{ post.author }}</p>
+            </td>
+            <td>
+              <span [ngClass]="getCategoryBadgeClass(post.category)" class="badge">
+                {{ getCategoryLabel(post.category) }}
+              </span>
+            </td>
+            <td>
+              <span [ngClass]="getStatusBadgeClass(post.published)" class="badge">
+                {{ getStatusText(post.published) }}
+              </span>
+            </td>
+            <td class="date-cell">
+              {{ (post.updatedAt || post.createdAt) | date: 'short' }}
+            </td>
+            <td class="actions-cell">
+              <button
+                class="btn btn-sm btn-edit"
+                (click)="onEditPost(post)"
+                title="Edit post"
+              >
+                ✏️ Edit
+              </button>
+              <button
+                class="btn btn-sm btn-delete"
+                (click)="onDeletePost(post)"
+                title="Delete post"
+              >
+                🗑️ Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<section class="login-container">
+  <div class="login-box">
+    <div class="login-header">
+      <h1>Admin Login</h1>
+      <p>Manage your blog posts</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Error Alert -->
+      <div *ngIf="error" class="alert alert-error">
+        <span>{{ error }}</span>
+      </div>
+
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-control"
+          placeholder="Enter your username"
+          [class.is-invalid]="submitted && f['username'].errors"
+        />
+        <div *ngIf="submitted && f['username'].errors" class="error-message">
+          <span *ngIf="f['username'].errors['required']">Username is required</span>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Enter your password"
+          [class.is-invalid]="submitted && f['password'].errors"
+        />
+        <div *ngIf="submitted && f['password'].errors" class="error-message">
+          <span *ngIf="f['password'].errors['required']">Password is required</span>
+          <span *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loading"
+      >
+        <span *ngIf="!loading">Sign In</span>
+        <span *ngIf="loading">Signing In...</span>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <p>Demo credentials:</p>
+      <p><strong>Username:</strong> admin</p>
+      <p><strong>Password:</strong> admin123</p>
+    </div>
+  </div>
+</section>
