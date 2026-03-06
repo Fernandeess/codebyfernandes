@@ -13,8 +13,9 @@ on:
 
 env:
   REGISTRY: docker.io
-  BACKEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/blog-api
-  FRONTEND_IMAGE: ${{ secrets.DOCKER_USERNAME }}/blog-web
+  DOCKERHUB_NAMESPACE: ${{ secrets.DOCKER_USERNAME || github.repository_owner }}
+  BACKEND_IMAGE: ${{ (secrets.DOCKER_USERNAME || github.repository_owner) }}/blog-api
+  FRONTEND_IMAGE: ${{ (secrets.DOCKER_USERNAME || github.repository_owner) }}/blog-web
 
 jobs:
   build-backend:
@@ -49,16 +50,16 @@ jobs:
             type=sha
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push backend
-        uses: docker/build-push-action@v5
-        with:
-          context: ./backend
-          file: ./backend/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-backend.outputs.tags }}
-          labels: ${{ steps.meta-backend.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:buildcache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE }}:buildcache,mode=max
+       - name: Build and push backend
+         uses: docker/build-push-action@v5
+         with:
+           context: ./backend
+           file: ./backend/Dockerfile
+           push: ${{ github.event_name != 'pull_request' }}
+           tags: ${{ steps.meta-backend.outputs.tags }}
+           labels: ${{ steps.meta-backend.outputs.labels }}
+           cache-from: ${{ github.event_name != 'pull_request' && format('type=registry,ref={0}/{1}:buildcache', env.REGISTRY, env.BACKEND_IMAGE) || '' }}
+           cache-to: ${{ github.event_name != 'pull_request' && format('type=registry,ref={0}/{1}:buildcache,mode=max', env.REGISTRY, env.BACKEND_IMAGE) || '' }}
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -92,16 +93,16 @@ jobs:
             type=sha
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push frontend
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./frontend.Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-frontend.outputs.tags }}
-          labels: ${{ steps.meta-frontend.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE }}:buildcache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE }}:buildcache,mode=max
+       - name: Build and push frontend
+         uses: docker/build-push-action@v5
+         with:
+           context: .
+           file: ./frontend.Dockerfile
+           push: ${{ github.event_name != 'pull_request' }}
+           tags: ${{ steps.meta-frontend.outputs.tags }}
+           labels: ${{ steps.meta-frontend.outputs.labels }}
+           cache-from: ${{ github.event_name != 'pull_request' && format('type=registry,ref={0}/{1}:buildcache', env.REGISTRY, env.FRONTEND_IMAGE) || '' }}
+           cache-to: ${{ github.event_name != 'pull_request' && format('type=registry,ref={0}/{1}:buildcache,mode=max', env.REGISTRY, env.FRONTEND_IMAGE) || '' }}
 
   notify:
     needs: [build-backend, build-frontend]
