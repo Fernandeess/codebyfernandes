@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  blog-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: blog-api-dev
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      JAVA_OPTS: "-Xmx512m -Xms256m"
+    volumes:
+      - ./backend:/app
+      - ~/.m2:/root/.m2
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/api/posts"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - blog-network-dev
+
+  blog-web:
+    image: node:20-alpine
+    container_name: blog-web-dev
+    ports:
+      - "4200:4200"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm start
+    depends_on:
+      - blog-api
+    networks:
+      - blog-network-dev
+
+networks:
+  blog-network-dev:
+    driver: bridge
