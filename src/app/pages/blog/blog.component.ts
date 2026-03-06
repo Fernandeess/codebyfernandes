@@ -91,4 +91,11 @@ export class BlogComponent implements OnInit {
     if (url.includes('youtu.be')) return 'YouTube';
     return 'External';
   }
+
+  getPostCountForCategory(categoryValue: string): number {
+    if (categoryValue === 'all') {
+      return this.posts.length;
+    }
+    return this.posts.filter(p => p.category === categoryValue).length;
+  }
 }
