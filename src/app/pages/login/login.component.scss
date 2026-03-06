@@ -1,4 +1,5 @@
-@import "src/variables.scss";
+@use "sass:color";
+@use "variables" as *;
 
 .login-container {
   display: flex;
@@ -6,7 +7,7 @@
   align-items: center;
   min-height: calc(100vh - 200px);
   padding: 40px 20px;
-  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 5%) 100%);
+  background: linear-gradient(135deg, $primary-color 0%, color.adjust($primary-color, $lightness: -5%) 100%);
 }
 
 .login-box {
@@ -44,9 +45,9 @@
       font-size: 14px;
 
       &.alert-error {
-        background-color: lighten($error-color, 40%);
-        color: darken($error-color, 20%);
-        border: 1px solid lighten($error-color, 20%);
+        background-color: color.adjust($error-color, $lightness: 40%);
+        color: color.adjust($error-color, $lightness: -20%);
+        border: 1px solid color.adjust($error-color, $lightness: 20%);
       }
     }
 
@@ -78,7 +79,7 @@
 
         &.is-invalid {
           border-color: $error-color;
-          background-color: lighten($error-color, 45%);
+          background-color: color.adjust($error-color, $lightness: 45%);
 
           &:focus {
             box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
@@ -112,7 +113,7 @@
         color: $white;
 
         &:hover:not(:disabled) {
-          background-color: darken($secondary-color, 10%);
+          background-color: color.adjust($secondary-color, $lightness: -10%);
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
         }

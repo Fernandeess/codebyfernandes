@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ProjectComponent } from "../../components/project/project.component";
 import { TechIconsComponent } from '../../components/tech-icons/tech-icons.component';
 import { TechImages } from '../../interfaces/TechImages';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProjectComponent, TechIconsComponent],
+  imports: [TechIconsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
