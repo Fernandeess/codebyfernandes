@@ -12,12 +12,12 @@
         class="filter-btn"
         [class.active]="selectedCategory === category.value"
         (click)="onCategoryChange(category.value)"
-      >
-        {{ category.label }}
-        <span class="count" *ngIf="category.value !== 'all'">
-          ({{ category.value === 'all' ? posts.length : (posts | slice:0:1000).filter(p => p.category === category.value).length }})
-        </span>
-      </button>
+       >
+         {{ category.label }}
+         <span class="count" *ngIf="category.value !== 'all'">
+           ({{ getPostCountForCategory(category.value) }})
+         </span>
+       </button>
     </div>
   </div>
 
